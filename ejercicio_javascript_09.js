@@ -1,9 +1,9 @@
 
 let usuario = document.querySelector('#user')  
 
-let contraseña = document.querySelector('#pass')  
+let contraseña = document.querySelector('#Password')  
 
-let contraseñaRepetida = document.querySelector('#passRepeat')  
+let contraseñaRepetida = document.querySelector('#RepeatPassword')  
 
 let mail = document.querySelector('#mail')  
 
