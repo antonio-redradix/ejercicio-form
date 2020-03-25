@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300|Roboto:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="css/main.min.css">
+</head>
+<body>
+    <section class="container">
+        <form id="form" action="#" class="form">
+            <header class="form__header">
+                <p class="form__header__text">Login to your account</p>
+            </header>
+            <main class="form__main">
+                <div class="form__row">
+                    <label for="username">
+                        <i id="usernameIcon" class="fa fa-user form__icon" aria-hidden="true"></i>
+                    </label>
+                    <input class="form__input" type="text" id="username" placeholder="Username">
+                </div>
+                <div class="form__row">
+                    <label for="email">
+                        <i id="emailIcon" class="fa fa-envelope form__icon" aria-hidden="true"></i>
+                    </label>
+                    <input class="form__input" type="text" id="email" placeholder="Email">
+                </div>
+                <div class="form__row">
+                    <label for="password">
+                        <i id="passwordIcon" class="fa fa-unlock-alt form__icon" aria-hidden="true"></i>
+                    </label>
+                    <input class="form__input" type="password" id="password" placeholder="Password">
+                </div>
+                <div class="form__row">
+                    <label for="repeatPassword">
+                        <i id="repeatPasswordIcon" class="fa fa-unlock-alt form__icon" aria-hidden="true"></i>
+                    </label>
+                    <input class="form__input" type="password" id="repeatPassword" placeholder="Repeat password">
+                </div>
+                <div class="form__row">
+                    <label for="shows">
+                        <i id="showsIcon" class="fa fa-film form__icon" aria-hidden="true"></i>
+                    </label>
+                    <select  class="form__select" name="" id="shows">
+                    </select>
+                </div>
+                <div class="form__row form__row--legal">
+                    <button type="button" class="form__submit" id="signButton">Sign in</button>
+                    <div class="form--legal">
+                        <input class="form__check__input" type="checkbox" id="acceptLegal">
+                        <span class="form__check__text">Accept terms and conditions</span>
+                    </div>
+                </div>
+            </main>
+        </form>
+        <section id="messageContainer" class="message-content">
+            <section id="messageName" class="message"></section>
+            <section id="messageEmail" class="message"></section>
+            <section id="messagePassword" class="message"></section>
+            <section id="messageRepeatPassword" class="message"></section>
+            <section id="messageNameShow" class="message"></section>
+            <section id="messageNameLegal" class="message"></section>
+        </section>
+    </section>
+    <script src="js/main.js"></script>
+</body>
+</html>
