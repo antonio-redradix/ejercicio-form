@@ -1,0 +1,101 @@
+body{
+    box-sizing: border-box;
+
+    background: rgba(245,161,207,1);
+    background: moz-linear-gradient(left, rgba(245,161,207,1) 0%, rgba(237,135,232,1) 46%, rgba(189,79,189,1) 98%, rgba(189,79,189,1) 100%);
+    background: webkit-gradient(left top, right top, color-stop(0%, rgba(245,161,207,1)), color-stop(46%, rgba(237,135,232,1)), color-stop(98%, rgba(189,79,189,1)), color-stop(100%, rgba(189,79,189,1)));
+    background: webkit-linear-gradient(left, rgba(245,161,207,1) 0%, rgba(237,135,232,1) 46%, rgba(189,79,189,1) 98%, rgba(189,79,189,1) 100%);
+    background: linear-gradient(left, rgba(245,161,207,1) 0%, rgba(237,135,232,1) 46%, rgba(189,79,189,1) 98%, rgba(189,79,189,1) 100%);
+    background: linear-gradient(left, rgba(245,161,207,1) 0%, rgba(237,135,232,1) 46%, rgba(189,79,189,1) 98%, rgba(189,79,189,1) 100%);
+    background: linear-gradient(to right, rgba(245,161,207,1) 0%, rgba(237,135,232,1) 46%, rgba(189,79,189,1) 98%, rgba(189,79,189,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5a1cf', endColorstr='#bd4fbd', GradientType=1 );
+    }
+p{
+    color: rgb(132, 136, 148);
+    position: relative;
+    left: 8%;
+    top: 73%;
+    font-size: 29px;
+}
+img{
+    width: 20px;
+    height: 20px;
+    margin-top: 10px;
+    margin-left: 40px;
+}
+main{
+    position: relative;
+    left: 40%;
+  
+  
+}
+button{
+    width: 180px;
+    height: 41px;
+    text-align: center;
+    margin-top: 84px;
+    margin-left: 73px;
+    background-color: rgb(34,38, 50);
+    color: rgb(198,93,124);
+    border-color: rgb(198,93,124);
+    border-radius: 30px;
+    margin-bottom: -144px;
+}
+label{
+    color: rgb(132, 136, 148);
+}
+form{
+    background-color: rgb(34,38, 50);
+    position: relative;
+    display: inline-grid;
+    width: 500px;
+    height: 709px;
+}
+#datos{
+   
+    position: relative;
+    display: inline-grid;
+    width: 100px;
+    height: 200px;
+  
+    
+}
+#aceptar{
+    display: flex;
+    margin-left: 153px;
+}
+input{
+    
+    position: relative;
+    display: block;
+    left: 0px;
+    background-color: rgb(51,53,74);
+    margin-left: 13px;
+}
+.bloque{
+   position: relative;
+   display: flex;
+   background-color: rgb(51,53,74);
+   top: 200%;
+   width: 500px;
+   border-top: white solid 0.1px;
+   
+}
+.bloque input{
+    border: hidden;
+    border-top: white solid 0.1px;
+}
+
+
+#series {
+    background-color: rgb(51,53,74);
+    color: rgb(132, 136, 148);
+    border: hidden;
+    margin-top: 11px;
+    margin-left: 40px;
+    width: 440px;
+}
+
+
+
+
