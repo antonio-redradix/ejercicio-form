@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4 form</title>
+
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">    
+
+    <style>
+        html, body{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            height: 100vh;
+            background: rgb(230,94,96);
+            background: linear-gradient(130deg, rgba(230,94,96,1) 0%, rgba(189,108,228,1) 100%);
+        }
+
+        #boxLogin{
+            width: 500px;
+            background-color: #242834;
+            position: absolute ;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) ;
+            border-top: 2px solid #f23026;
+        }
+
+        h1{
+            margin-top: 100px;
+            padding: 30px;
+            font-size: 20px;
+            color: #7e8190;
+        }
+
+        .inputContainer{
+            background-color: #33354a;
+            border: 1px solid #3e4154;
+            box-sizing: border-box;
+            padding-left: 30px;
+        }
+
+        i{
+            color: #6b6e7f;
+            font-size: 30px;
+        }
+
+        input[type=text], input[type=password], input[type=email], select, input[type=email]{
+            width: 90%;
+            height: 50px;
+            box-sizing: border-box;
+            background-color: #33354a;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            margin-bottom: 0;
+            outline: none;
+        }
+
+        select{
+            width: 100%;
+            padding-left: 30px;
+        }
+
+        #rowCheckbox, #rowSubmit{
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #rowCheckbox label, #rowSubmit a{
+            color: #444756;
+            cursor: pointer;
+            display: inline-block;
+            margin-left: 10px;
+        }
+        
+
+        button{
+            width: 200px;
+            height: 50px;
+            border: 1px solid #e6698b;
+            color: #e6698b;
+            border-radius: 30px;
+            background-color: #242834;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        button{
+            border: 1px solid #c569cc;
+            color: #c569cc;
+        }
+
+        #moreInfo{
+            color: #444756;
+            padding: 30px;
+        }
+
+        input:focus{
+            border: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="boxLogin">
+        <h1>Login to your account</h1>
+        <form>
+        
+        <div class="inputContainer">
+            <i class="icon-user"></i>
+            <input type="text" id="user" placeholder="Usuario" maxlength="12" required>
+        </div>
+
+        <div class="inputContainer">
+            <i class="icon-lock"></i>
+            <input type="password" id="password" placeholder="Contraseña" required>
+        </div>
+
+        <div class="inputContainer">
+            <i class="icon-lock"></i>
+            <input type="password" id="retryPassword" placeholder="Repetir contraseña" required>
+        </div>
+
+        <div class="inputContainer">
+            <i class="icon-envelope"></i>
+            <input type="email" id="email" placeholder="Email" required>
+        </div>
+
+        <select>
+        </select>
+
+        <div id='rowCheckbox'>
+            <input type="checkbox" id="ok" value="acepted" required><label for="ok">Acepto los terminos y condiciones.</label>
+        </div>
+
+        <div id="rowSubmit">
+            <!--<input type="submit" value="LOG IN">-->
+            <button>LOG IN</button>
+            <a href="https://google.es" id="infoCheck">¿Has olvidado la contraseña?</a>
+        </div>
+
+        <p id="moreInfo">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla auctor tempor varius. Aliquam nunc mi, facilisis at eros consectetur, iaculis aliquam justo. <br>
+        </p>
+        </form>
+    </div>
+    <script>
+        let nodeSelect = document.querySelector('select')
+        let listSesons = ["Game of Thrones", "Breaking Bad", "Black Mirror", "Sherlock", "Ozark", "You", "Chernobyl"]
+
+        for(seson of listSesons){
+            let nodeOption = document.createElement('option')
+            nodeOption.setAttribute('value',seson)
+            nodeOption.innerHTML = seson
+            nodeSelect.appendChild(nodeOption)
+        }
+
+        function createMsgError(node){
+            node.style.borderBottom = '1px solid red'
+            let nodeAlertError = document.createElement('div')
+            nodeAlertError.style.color = 'red'
+            nodeAlertError.style.textAlign = 'center'
+            nodeAlertError.style.border = '1px solid red'
+
+            nodeAlertError.innerHTML = 'Error, complete los campos correctamente.'
+            let nodeForm = document.querySelector('form')
+            nodeForm.appendChild(nodeAlertError)
+        }
+
+        //evento click submit
+        let nodeBtn = document.querySelector('button')
+        nodeBtn.addEventListener('click', function(){
+
+
+            let nodeNameUser = document.querySelector('#user')
+            let nodePassword = document.querySelector('#password')
+            let nodeRetryPassword = document.querySelector('#retryPassword')
+            let nodeEmail = document.querySelector('#email')
+
+            if(/^[A-Za-z]{0,12}$/.test(nodeNameUser)){}else{
+                createMsgError(nodeNameUser)
+                return false
+            }
+
+            if(/^[A-Za-z0-9]{0,12}$/.test(nodePassword)){}else{
+                createMsgError(nodePassword)
+                return false
+            }
+            if(nodePassword.value === nodeRetryPassword.value){}else{
+                createMsgError(nodePassword)
+                createMsgError(nodeRetryPassword)
+                return false
+            }
+            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/.test(nodeEmail)){}else{
+                createMsgError(nodeEmail)
+                return false
+            }
+
+            let nodeCheckbox = document.getElementById('test');
+            nodeCheckbox.addEventListener("change", validaCheckbox, false);
+            function validaCheckbox(){
+                let checked = nodeCheckbox.checked;
+                if(checked){}else{
+                    
+                    let nodeTextCheck = documnet.querySelector('#infoCheck')
+                    nodeTextCheck.style.color = 'red'
+
+                    return false
+                }
+            }
+
+        })
+
+
+
+        //let nodeSubmit = document.querySelector('button')
+        //nodeSubmit.addEventListener("click", validateForm);
+
+        function validateForm() {
+            //cambiar false por nodo y añador border rojo
+            //console.log('entra')
+            /*
+            if(/^[A-Za-z]{0,12}$/.test(user)){}else{return false}
+
+            if(/^[A-Za-z0-9]{0,12}$/.test(pass)){}else{return false}
+            
+            if(pass === rpass){//ok
+            }else{return false}
+
+            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/.test(email)){//ok
+            }else{return false}
+
+            if(/Game of Thrones|Breaking Bad|Black Mirror|Sherlock|Ozark|You|Chernobyl/.test(seson)){}else{return false}
+
+            var checkbox = document.getElementById('test');
+            checkbox.addEventListener("change", validaCheckbox, false);
+            function validaCheckbox(){
+                var checked = checkbox.checked;
+                if(checked){
+                    //ok
+                }else{return false}
+            }
+
+            return true
+            */
+        }
+
+
+    </script>
+</body>
+</html>
