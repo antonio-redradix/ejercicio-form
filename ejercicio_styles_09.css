@@ -81,27 +81,33 @@ form{
 
 .login a{
     color: white;
-    margin-left: 30px;
+    margin-left: 20px;
 }
 
-.login button{
+.login div{
     margin-top: 30px;
     color: red;
     background-color: black;
     border: 3px solid red;
     border-radius: 30px;
     padding: 10px 30px 10px 30px;
-
+    max-width: 55px;
+    display: inline-block;
 }
-button:visited {
+
+div:visited {
     color: red;
-    }
-button:hover {
+   
+max-width: 55px;}
+
+    div:hover {
     color: white;
     border-color: white;
     }
-  
-button:active {
+
+    max-width: 55px;
+
+    div:active {
     color: #0000FF;
     }
 
